@@ -25,14 +25,14 @@ export function SpaceCarousel() {
   return (
     <section className="space-section" id="space">
       <div className="space-stage">
-        <AnimatePresence mode="wait">
-          <motion.div key={active} className="space-image image-frame" initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .7 }}>
+        <AnimatePresence>
+          <motion.div key={active} className="space-image image-frame" initial={{ opacity: 0, scale: 1.015 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .32 }}>
             <img src={spaces[active].image} alt={spaces[active][language]} />
           </motion.div>
         </AnimatePresence>
         <div className="space-shade" />
         <div className="space-copy">
-          <p className="section-label light"><span>04</span>{t.label}</p>
+          <p className="section-label light"><span>03</span>{t.label}</p>
           <h2>{t.title}</h2>
           <p>{t.body}</p>
         </div>

@@ -7,7 +7,6 @@ import { LanguageProvider } from "./components/LanguageProvider";
 import { MenuCarousel } from "./components/MenuCarousel";
 import { Navbar } from "./components/Navbar";
 import { SpaceCarousel } from "./components/SpaceCarousel";
-import { Story } from "./components/Story";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Story />
         <MenuCarousel />
         <SpaceCarousel />
         <Contact />

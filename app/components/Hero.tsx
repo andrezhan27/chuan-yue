@@ -7,16 +7,16 @@ import { useLanguage } from "./LanguageProvider";
 const copy = {
   pt: {
     eyebrow: "Lisboa · Cozinha Sichuan contemporânea",
-    title: "O fogo de Sichuan,\nservido com precisão.",
-    body: "Sabores intensos, ingredientes honestos e a delicadeza de uma cozinha feita à mão, todos os dias.",
+    title: "川粤 Chuan Yue",
+    body: "Sabores autênticos e intensos, noodles feitos à mão e pratos clássicos e autênticos de Sichuan, preparados de raiz todos os dias.",
     cta: "Reservar uma mesa",
     menu: "Descobrir o menu",
     note: "Tradição chinesa · Ritmo lisboeta",
   },
   en: {
     eyebrow: "Lisbon · Contemporary Sichuan cuisine",
-    title: "The fire of Sichuan,\nserved with precision.",
-    body: "Bold flavours, honest ingredients and the delicacy of a kitchen made by hand, every day.",
+    title: "川粤 Chuan Yue",
+    body: "Authentic and bold flavors, handmade noodles, and classic authentic Sichuan dishes made from scratch daily.",
     cta: "Book a table",
     menu: "Discover the menu",
     note: "Chinese tradition · Lisbon rhythm",
@@ -28,7 +28,7 @@ function MagneticButton({ children }: { children: React.ReactNode }) {
   const y = useSpring(useMotionValue(0), { stiffness: 190, damping: 15 });
   return (
     <motion.a
-      href="#contact"
+      href="/reservation"
       className="primary-cta"
       style={{ x, y }}
       onMouseMove={(event) => {

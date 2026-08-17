@@ -41,15 +41,15 @@ export function Navbar() {
       <nav className="nav-shell" aria-label="Navegação principal">
         <div className="nav-links nav-links-left">
           <Link href="/menu">{t.menu}</Link>
-          <a href="/#space">{t.space}</a>
+          <Link href="/#space">{t.space}</Link>
         </div>
-        <a className="wordmark" href="/#top" aria-label="Chuan Yue, início">
+        <Link className="wordmark" href="/" aria-label="Chuan Yue, início">
           <span>川粤</span> Chuan Yue
-        </a>
+        </Link>
         <div className="nav-links nav-links-right">
-          <a href="/#contact">{t.contact}</a>
+          <Link href="/#contact">{t.contact}</Link>
           <LanguageToggle id="desktop" />
-          <a className="nav-book" href="/#contact">{t.book}</a>
+          <Link className="nav-book" href="/reservation">{t.book}</Link>
         </div>
         <div className="mobile-actions">
           <LanguageToggle id="mobile" />
@@ -60,9 +60,9 @@ export function Navbar() {
         {open && (
           <motion.div className="mobile-menu" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}>
             <Link href="/menu" onClick={() => setOpen(false)}>{t.menu}<span>01</span></Link>
-            <a href="/#space" onClick={() => setOpen(false)}>{t.space}<span>02</span></a>
-            <a href="/#contact" onClick={() => setOpen(false)}>{t.contact}<span>03</span></a>
-            <a className="mobile-book" href="/#contact" onClick={() => setOpen(false)}>{t.book}</a>
+            <Link href="/#space" onClick={() => setOpen(false)}>{t.space}<span>02</span></Link>
+            <Link href="/#contact" onClick={() => setOpen(false)}>{t.contact}<span>03</span></Link>
+            <Link className="mobile-book" href="/reservation" onClick={() => setOpen(false)}>{t.book}</Link>
           </motion.div>
         )}
       </AnimatePresence>

@@ -15,8 +15,8 @@ const dishes = [
 ];
 
 const copy = {
-  pt: { label: "À mesa", title: "Uma viagem pelo menu", intro: "Pratos para partilhar, contrastes para descobrir e uma intensidade que permanece.", all: "Ver menu completo", previous: "Prato anterior", next: "Prato seguinte" },
-  en: { label: "At the table", title: "A journey through the menu", intro: "Plates to share, contrasts to discover and an intensity that stays with you.", all: "View full menu", previous: "Previous dish", next: "Next dish" },
+  pt: { label: "O nosso menu", title: "Uma viagem pelo menu", intro: "Pratos para partilhar, contrastes para descobrir e uma intensidade que permanece.", all: "Ver menu completo", previous: "Prato anterior", next: "Prato seguinte" },
+  en: { label: "Our Menu", title: "A journey through the menu", intro: "Plates to share, contrasts to discover and an intensity that stays with you.", all: "View full menu", previous: "Previous dish", next: "Next dish" },
 };
 
 export function MenuCarousel() {
@@ -34,7 +34,7 @@ export function MenuCarousel() {
     <section className="menu-section" id="menu-preview">
       <div className="section-heading">
         <Reveal>
-          <p className="section-label light"><span>03</span>{t.label}</p>
+          <p className="section-label"><span>02</span>{t.label}</p>
           <h2>{t.title}</h2>
         </Reveal>
         <Reveal className="menu-heading-side" delay={.08}>
@@ -43,6 +43,7 @@ export function MenuCarousel() {
         </Reveal>
       </div>
       <div className="menu-carousel-wrap">
+        <button className="carousel-edge-button carousel-edge-left" onClick={() => go(-1)} aria-label={t.previous}><ArrowLeft /></button>
         <div className="menu-track" ref={track}>
           {dishes.map((dish, index) => (
             <article className={`dish-card ${active === index ? "active" : ""}`} key={dish.pt}>
@@ -51,12 +52,9 @@ export function MenuCarousel() {
             </article>
           ))}
         </div>
+        <button className="carousel-edge-button carousel-edge-right" onClick={() => go(1)} aria-label={t.next}><ArrowRight /></button>
         <div className="carousel-footer">
           <div className="carousel-progress"><span>{String(active + 1).padStart(2, "0")}</span><i><b style={{ width: `${((active + 1) / dishes.length) * 100}%` }} /></i><span>0{dishes.length}</span></div>
-          <div className="carousel-buttons">
-            <button onClick={() => go(-1)} aria-label={t.previous}><ArrowLeft /></button>
-            <button onClick={() => go(1)} aria-label={t.next}><ArrowRight /></button>
-          </div>
         </div>
       </div>
     </section>

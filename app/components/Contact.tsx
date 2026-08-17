@@ -16,10 +16,10 @@ export function Contact() {
     <section className="contact-section @container" id="contact">
       <div className="contact-grid grid grid-cols-1 @5xl:grid-cols-2">
         <Reveal className="contact-intro">
-          <p className="section-label"><span>05</span>{t.label}</p>
+          <p className="section-label"><span>04</span>{t.label}</p>
           <h2>{t.title}</h2>
           <p>{t.body}</p>
-          <a className="contact-cta" href="mailto:reservations@chuanyuelisbon.com">{t.reserve}<MoveUpRight size={18} /></a>
+          <a className="contact-cta" href="/reservation">{t.reserve}<MoveUpRight size={18} /></a>
         </Reveal>
         <Reveal className="contact-details" delay={.1}>
           <div className="contact-row"><MapPin /><div><span>{t.location}</span><p>Rua do Carmo 15<br />1200-093 Lisboa, Portugal</p><a href="https://www.openstreetmap.org/search?query=Rua%20do%20Carmo%2015%20Lisboa" target="_blank" rel="noreferrer">{t.map} ↗</a></div></div>
