@@ -1,19 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { Reveal } from "./Reveal";
+import { restaurantInfo } from "../data/restaurant";
 
 const copy = {
   pt: {
     label: "A nossa cozinha",
     title: "Entre o calor da wok e a delicadeza do tempo.",
-    body: "Na Chuan Yue, cada prato nasce do equilíbrio. O picante não encobre: revela. As especiarias são torradas, os caldos descansam e a massa é trabalhada à mão. Uma cozinha com raízes em Sichuan e uma expressão naturalmente lisboeta.",
+    body: `Na ${restaurantInfo.name.latin}, cada prato nasce do equilíbrio. O picante não encobre: revela. As especiarias são torradas, os caldos descansam e a massa é trabalhada à mão. Uma cozinha com raízes em Sichuan e uma expressão naturalmente lisboeta.`,
     quote: "Intenso por natureza. Preciso por escolha.",
   },
   en: {
     label: "Our kitchen",
     title: "Between the heat of the wok and the delicacy of time.",
-    body: "At Chuan Yue, every dish begins with balance. Heat does not conceal: it reveals. Spices are toasted, broths are left to deepen and noodles are worked by hand. A kitchen rooted in Sichuan with a distinctly Lisbon expression.",
+    body: `At ${restaurantInfo.name.latin}, every dish begins with balance. Heat does not conceal: it reveals. Spices are toasted, broths are left to deepen and noodles are worked by hand. A kitchen rooted in Sichuan with a distinctly Lisbon expression.`,
     quote: "Intense by nature. Precise by choice.",
   },
 };
@@ -31,8 +33,8 @@ export function Story() {
           <p className="story-quote">“{t.quote}”</p>
         </Reveal>
         <Reveal className="story-visual" delay={.12}>
-          <div className="story-image image-frame"><img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=88" alt="Dumplings artesanais acabados de preparar" /></div>
-          <div className="story-detail image-frame"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=88" alt="Massa chinesa feita à mão" /></div>
+          <div className="story-image image-frame"><Image src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=88" alt="Dumplings artesanais acabados de preparar" fill sizes="(max-width: 860px) 84vw, 48vw" /></div>
+          <div className="story-detail image-frame"><Image src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=88" alt="Massa chinesa feita à mão" fill sizes="(max-width: 860px) 36vw, 20vw" /></div>
           <span className="chinese-stamp">川<br />味</span>
         </Reveal>
       </div>

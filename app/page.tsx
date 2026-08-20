@@ -1,5 +1,3 @@
-"use client";
-
 import { Hero } from "./components/Hero";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -12,13 +10,17 @@ export default function Home() {
   return (
     <LanguageProvider>
       <Navbar />
-      <main>
-        <Hero />
-        <MenuCarousel />
-        <SpaceCarousel />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="landing-shell">
+        <div className="landing-content">
+          <main>
+            <Hero />
+            <MenuCarousel />
+            <SpaceCarousel />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </div>
     </LanguageProvider>
   );
 }

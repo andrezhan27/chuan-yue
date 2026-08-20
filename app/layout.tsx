@@ -1,22 +1,41 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
+import { restaurantName } from "./data/restaurant";
+import { siteUrl } from "./data/site";
 import "./globals.css";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  const baseUrl = `${protocol}://${host}`;
-  const title = "Chuan Yue | Cozinha Sichuan em Lisboa";
-  const description = "Cozinha Sichuan contemporânea no coração de Lisboa. Sabores intensos, técnica precisa e hospitalidade calorosa.";
-  return {
+const title = `${restaurantName} | Cozinha Sichuan em Lisboa`;
+const description =
+  "Cozinha Sichuan contemporânea no coração de Lisboa. Sabores intensos, técnica precisa e hospitalidade calorosa.";
+
+export const metadata: Metadata = {
+  metadataBase: siteUrl,
+  title,
+  description,
+  alternates: { canonical: "/" },
+  icons: { icon: "/favicon.png", shortcut: "/favicon.png" },
+  openGraph: {
     title,
     description,
-    icons: { icon: "/favicon.png", shortcut: "/favicon.png" },
-    openGraph: { title, description, type: "website", locale: "pt_PT", images: [{ url: `${baseUrl}/og.png`, width: 1200, height: 630, alt: "Chuan Yue — O fogo de Sichuan, servido com precisão." }] },
-    twitter: { card: "summary_large_image", title, description, images: [`${baseUrl}/og.png`] },
-  };
-}
+    type: "website",
+    locale: "pt_PT",
+    siteName: restaurantName,
+    url: "/",
+    images: [
+      {
+        url: "/og.png",
+        width: 1729,
+        height: 910,
+        alt: `${restaurantName} — O fogo de Sichuan, servido com precisão.`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og.png"],
+  },
+};
 
 export default function RootLayout({
   children,

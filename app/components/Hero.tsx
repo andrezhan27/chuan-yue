@@ -1,68 +1,61 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ArrowDownRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { getImageProps } from "next/image";
+import { restaurantInfo, restaurantName } from "../data/restaurant";
 import { useLanguage } from "./LanguageProvider";
 
 const copy = {
   pt: {
-    eyebrow: "Lisboa · Cozinha Sichuan contemporânea",
-    title: "川粤 Chuan Yue",
-    body: "Sabores autênticos e intensos, noodles feitos à mão e pratos clássicos e autênticos de Sichuan, preparados de raiz todos os dias.",
-    cta: "Reservar uma mesa",
-    menu: "Descobrir o menu",
-    note: "Tradição chinesa · Ritmo lisboeta",
+    cta: "Reservar",
+    menu: "Ver menu",
+    imageAlt: `Fachada do restaurante ${restaurantName} em Lisboa`,
   },
   en: {
-    eyebrow: "Lisbon · Contemporary Sichuan cuisine",
-    title: "川粤 Chuan Yue",
-    body: "Authentic and bold flavors, handmade noodles, and classic authentic Sichuan dishes made from scratch daily.",
     cta: "Book a table",
-    menu: "Discover the menu",
-    note: "Chinese tradition · Lisbon rhythm",
+    menu: "View menu",
+    imageAlt: `${restaurantName} restaurant storefront in Lisbon`,
   },
 };
-
-function MagneticButton({ children }: { children: React.ReactNode }) {
-  const x = useSpring(useMotionValue(0), { stiffness: 190, damping: 15 });
-  const y = useSpring(useMotionValue(0), { stiffness: 190, damping: 15 });
-  return (
-    <motion.a
-      href="/reservation"
-      className="primary-cta"
-      style={{ x, y }}
-      onMouseMove={(event) => {
-        const rect = event.currentTarget.getBoundingClientRect();
-        x.set((event.clientX - rect.left - rect.width / 2) * 0.18);
-        y.set((event.clientY - rect.top - rect.height / 2) * 0.18);
-      }}
-      onMouseLeave={() => { x.set(0); y.set(0); }}
-    >
-      {children}<ArrowDownRight size={17} />
-    </motion.a>
-  );
-}
 
 export function Hero() {
   const { language } = useLanguage();
   const t = copy[language];
+  const commonImageProps = { alt: t.imageAlt, sizes: "100vw", quality: 75 };
+  const {
+    props: { srcSet: desktopSrcSet },
+  } = getImageProps({
+    ...commonImageProps,
+    src: "/hero/hero-desktop-v2.webp",
+    width: 1672,
+    height: 941,
+  });
+  const {
+    props: { srcSet: mobileSrcSet, ...heroImageProps },
+  } = getImageProps({
+    ...commonImageProps,
+    src: "/hero/hero-mobile-v2.webp",
+    width: 941,
+    height: 1672,
+  });
+
   return (
     <section className="hero" id="top">
       <motion.div className="hero-image" initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}>
-        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2200&q=90" alt="Prato contemporâneo servido numa mesa elegante" />
+        <picture>
+          <source media="(min-width: 861px)" srcSet={desktopSrcSet} />
+          <source media="(max-width: 860px)" srcSet={mobileSrcSet} />
+          <img {...heroImageProps} alt={t.imageAlt} fetchPriority="high" />
+        </picture>
       </motion.div>
       <div className="hero-shade" />
       <div className="hero-content">
-        <motion.p key={`${language}-eyebrow`} className="eyebrow" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6 }}>{t.eyebrow}</motion.p>
-        <motion.h1 key={`${language}-title`} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: .08 }}>{t.title}</motion.h1>
-        <motion.p key={`${language}-body`} className="hero-body" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .6, delay: .2 }}>{t.body}</motion.p>
-        <div className="hero-actions">
-          <MagneticButton>{t.cta}</MagneticButton>
-          <a className="text-link" href="/menu">{t.menu}<span>↗</span></a>
-        </div>
+        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .08 }}><span>{restaurantInfo.name.chinese}</span> {restaurantInfo.name.latin}</motion.h1>
+        <motion.div key={language} className="hero-actions" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55, delay: .25 }}>
+          <a className="hero-menu-cta" href="#menu-preview">{t.menu}</a>
+          <a className="hero-reserve-cta" href="/reservation">{t.cta}</a>
+        </motion.div>
       </div>
-      <p className="hero-note">{t.note}</p>
-      <div className="hero-index"><span>01</span><i /><span>05</span></div>
     </section>
   );
 }
