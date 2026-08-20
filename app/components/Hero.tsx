@@ -9,11 +9,13 @@ const copy = {
   pt: {
     cta: "Reservar",
     menu: "Ver menu",
+    descriptor: "Restaurante Dragão Pimenta",
     imageAlt: `Fachada do restaurante ${restaurantName} em Lisboa`,
   },
   en: {
     cta: "Book a table",
     menu: "View menu",
+    descriptor: "Restaurant Dragão Pimenta",
     imageAlt: `${restaurantName} restaurant storefront in Lisbon`,
   },
 };
@@ -48,12 +50,15 @@ export function Hero() {
           <img {...heroImageProps} alt={t.imageAlt} fetchPriority="high" />
         </picture>
       </motion.div>
-      <div className="hero-shade" />
+      <div className="hero-shade" aria-hidden="true" />
       <div className="hero-content">
-        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .08 }}><span>{restaurantInfo.name.chinese}</span> {restaurantInfo.name.latin}</motion.h1>
+        <motion.div className="hero-title-group" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .08 }}>
+          <h1><span>{restaurantInfo.name.chinese}</span> {restaurantInfo.name.latin}</h1>
+          <p>{t.descriptor}</p>
+        </motion.div>
         <motion.div key={language} className="hero-actions" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55, delay: .25 }}>
-          <a className="hero-menu-cta" href="#menu-preview">{t.menu}</a>
           <a className="hero-reserve-cta" href="/reservation">{t.cta}</a>
+          <a className="hero-menu-cta" href="#menu-preview">{t.menu}</a>
         </motion.div>
       </div>
     </section>

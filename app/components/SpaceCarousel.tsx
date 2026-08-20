@@ -3,12 +3,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
+import { ReserveBanner } from "./ReserveBanner";
 
 const spaces = [
-  { image: "/space/private-dining-room.webp", pt: "Sala privada", en: "Private dining room" },
-  { image: "/space/banquet-table-setting-v2.webp", pt: "Mesa de banquete", en: "Banquet table" },
-  { image: "/space/floral-banquet-table.webp", pt: "Mesa para celebrações", en: "Celebration table" },
-  { image: "/space/main-dining-room.webp", pt: "Sala principal", en: "Main dining room" },
+  { image: "/space/space-1.webp", pt: "Sala principal do restaurante", en: "Main dining room" },
+  { image: "/space/space-2.webp", pt: "Interior do Chuan Yue", en: "Chuan Yue interior" },
+  { image: "/space/space-3.webp", pt: "Mesa preparada para receber", en: "A table set for guests" },
+  { image: "/space/space-4.webp", pt: "Detalhes da sala", en: "Dining room details" },
+  { image: "/space/space-5.webp", pt: "Ambiente do restaurante", en: "Restaurant atmosphere" },
+  { image: "/space/space-6.webp", pt: "Espaço para celebrar", en: "A space for celebrations" },
 ];
 
 const copy = {
@@ -46,6 +49,7 @@ export function SpaceCarousel() {
           </motion.figure>
         ))}
       </div>
+      <ReserveBanner />
     </section>
   );
 }

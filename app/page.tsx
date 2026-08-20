@@ -1,6 +1,7 @@
 import { Hero } from "./components/Hero";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { Highlights } from "./components/Highlights";
 import { LanguageProvider } from "./components/LanguageProvider";
 import { MenuCarousel } from "./components/MenuCarousel";
 import { Navbar } from "./components/Navbar";
@@ -17,6 +18,7 @@ export default function Home() {
             <MenuCarousel />
             <SpaceCarousel />
             <Contact />
+            <Highlights />
           </main>
           <Footer />
         </div>

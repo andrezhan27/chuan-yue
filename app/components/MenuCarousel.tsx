@@ -23,8 +23,8 @@ const dishes = [
 ];
 
 const copy = {
-  pt: { title: "O Nosso Menu", intro: "Pratos para partilhar, contrastes para descobrir e uma intensidade que permanece.", all: "Ver menu completo", previous: "Prato anterior", next: "Prato seguinte", select: "Mostrar" },
-  en: { title: "Our Menu", intro: "Plates to share, contrasts to discover and an intensity that stays with you.", all: "View full menu", previous: "Previous dish", next: "Next dish", select: "Show" },
+  pt: { title: "O Nosso Menu", intro: "Pratos para partilhar, contrastes para descobrir e uma intensidade que permanece.", all: "Ver menu completo", allTitle: "Toda a carta, à sua mesa", allBody: "Descubra os clássicos de Sichuan e Guangdong, especialidades da casa e pratos pensados para partilhar.", previous: "Prato anterior", next: "Prato seguinte", select: "Mostrar", slider: "Posição no menu" },
+  en: { title: "Our Menu", intro: "Plates to share, contrasts to discover and an intensity that stays with you.", all: "View full menu", allTitle: "The full menu, at your table", allBody: "Discover Sichuan and Guangdong classics, house specialities and dishes made for sharing.", previous: "Previous dish", next: "Next dish", select: "Show", slider: "Menu position" },
 };
 
 function circularOffset(index: number, active: number) {
@@ -68,7 +68,6 @@ export function MenuCarousel() {
         </Reveal>
         <Reveal className="menu-heading-side" delay={.08}>
           <p>{t.intro}</p>
-          <a href="/menu/chuan-yue-menu.pdf" target="_blank" rel="noreferrer">{t.all}<MoveRight size={18} /></a>
         </Reveal>
       </div>
       <div className="menu-carousel-wrap">
@@ -122,6 +121,32 @@ export function MenuCarousel() {
           })}
         </motion.div>
         <button className="carousel-edge-button carousel-edge-right" onClick={() => go(1)} aria-label={t.next}><ArrowRight /></button>
+        <div className="menu-carousel-position" role="group" aria-label={t.slider}>
+          <span className="sr-only" aria-live="polite">{active + 1} / {dishes.length}</span>
+          {dishes.map((dish, index) => (
+            <button
+              className={index === active ? "is-active" : undefined}
+              key={dish.image}
+              type="button"
+              aria-label={`${t.select} ${dish[language]}`}
+              aria-pressed={index === active}
+              onClick={() => setActive(index)}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="menu-full-card-shell">
+        <Reveal className="menu-full-card">
+          <div className="menu-full-copy">
+            <span>{t.title}</span>
+            <h3>{t.allTitle}</h3>
+            <p>{t.allBody}</p>
+            <a href="/menu/chuan-yue-menu.pdf" target="_blank" rel="noreferrer">{t.all}<MoveRight size={19} /></a>
+          </div>
+          <div className="menu-full-image image-frame">
+            <Image src="/menu/dish-2.png" alt="" width={1448} height={1086} sizes="(max-width: 860px) 100vw, 50vw" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

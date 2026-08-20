@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import logoBg from "../public/other-images/logo-bg.png";
 import { restaurantName } from "./data/restaurant";
 import { siteUrl } from "./data/site";
 import "./globals.css";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/" },
-  icons: { icon: "/favicon.png", shortcut: "/favicon.png" },
+  icons: { icon: logoBg.src, shortcut: logoBg.src, apple: logoBg.src },
   openGraph: {
     title,
     description,
