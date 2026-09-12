@@ -12,7 +12,6 @@ const dishes = [
   { pt: "Caranguejo com gengibre e cebolinho", en: "Ginger & Scallion Crab", notePt: "gengibre · cebolinho · molho da casa", noteEn: "ginger · scallion · house sauce", image: "/menu/ginger-scallion-crab.webp" },
   { pt: "Mao Xue Wang", en: "Mao Xue Wang", notePt: "sangue de pato · tripas · óleo de chilli", noteEn: "duck blood · tripe · chilli oil", image: "/menu/mao-xue-wang.webp" },
   { pt: "Mapo Tofu", en: "Mapo Tofu", notePt: "tofu · porco · doubanjiang", noteEn: "tofu · pork · doubanjiang", image: "/menu/mapo-tofu.webp" },
-  { pt: "Frango Gong Bao", en: "Gong Bao Chicken", notePt: "frango · amendoim · malagueta seca", noteEn: "chicken · peanuts · dried chilli", image: "/menu/gong-bao-chicken.webp" },
   { pt: "Peixe-esquilo agridoce", en: "Sweet & Sour Squirrel Fish", notePt: "pinhões · ervilhas · molho agridoce", noteEn: "pine nuts · peas · sweet-and-sour sauce", image: "/menu/sweet-and-sour-squirrel-fish.webp" },
   { pt: "Espetadas de Sichuan em óleo picante", en: "Sichuan Chilli-Oil Skewers", notePt: "Raiz de lótus · batatas · pimentos", noteEn: "Lotus root · potatoes · peppers", image: "/menu/sichuan-chilli-oil-skewers.webp" },
   { pt: "Caçarola de Gambas", en: "Prawn Casserole", notePt: "gambas · legumes · molho da casa", noteEn: "prawns · vegetables · house sauce", image: "/menu/dry-pot-chicken-wings.webp" },
