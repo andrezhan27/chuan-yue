@@ -14,7 +14,7 @@ export const restaurantInfo = {
   openingHours: [
     { day: { pt: "Segunda-feira", en: "Monday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },
     { day: { pt: "Terça-feira", en: "Tuesday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },
-    { day: { pt: "Quarta-feira", en: "Wednesday" }, periods: [] },
+    { day: { pt: "Quarta-feira", en: "Wednesday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },
     { day: { pt: "Quinta-feira", en: "Thursday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },
     { day: { pt: "Sexta-feira", en: "Friday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },
     { day: { pt: "Sábado", en: "Saturday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },

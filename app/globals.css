@@ -136,9 +136,9 @@ button { font: inherit; }
 .dish-card[role="button"]:focus-visible .dish-image { outline: 2px solid var(--gold); outline-offset: 5px; }
 .dish-image { aspect-ratio: 4/5; background: #292622; }
 .dish-card.active .dish-image { box-shadow: 0 28px 70px rgba(21,20,18,.18); }
-.dish-meta { padding: 21px 0 0; display: grid; grid-template-columns: 36px 1fr; gap: 13px; border-top: 1px solid var(--line); margin-top: 14px; }
+.dish-meta { width: 100%; padding: 21px 0 0; display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--line); margin-top: 14px; }
+.dish-meta > div { min-width: 0; width: 100%; }
 .dish-card.active .dish-meta { border-color: rgba(182,151,80,.58); }
-.dish-meta > span { color: var(--gold); font-size: 9px; letter-spacing: .12em; }
 .dish-meta h3 { margin: 0 0 7px; font-family: "EB Garamond", serif; font-size: 25px; font-weight: 400; }
 .dish-meta p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; letter-spacing: .025em; }
 .carousel-edge-button { position: absolute; z-index: 5; top: clamp(190px, 18vw, 255px); width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid rgba(21,20,18,.18); border-radius: 999px; background: rgba(252,250,244,.82); color: var(--ink); box-shadow: 0 12px 35px rgba(21,20,18,.1); backdrop-filter: blur(12px); cursor: pointer; transform: translateY(-50%); transition: background .3s, color .3s, border-color .3s, transform .3s; }
@@ -268,7 +268,7 @@ button { font: inherit; }
   .menu-heading-side { margin-top: 25px; font-size: 17px; }
   .menu-stage { height: 520px; }
   .dish-card { width: min(77vw, 310px); }
-  .dish-meta { grid-template-columns: 32px 1fr; padding-top: 17px; }
+  .dish-meta { padding-top: 17px; }
   .dish-meta h3 { font-size: 23px; }
   .carousel-edge-button { width: 44px; height: 44px; top: 190px; }
   .carousel-edge-left { left: 10px; }

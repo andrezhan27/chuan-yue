@@ -17,9 +17,7 @@ const copy = {
     reservations: "Reservas",
     location: "Morada",
     hours: "Horário",
-    regularDays: "Todos os dias (exceto quarta-feira)",
-    closedDay: "Quarta-feira",
-    closed: "Encerrado",
+    regularDays: "Todos os dias",
     contact: "Telefone",
     map: "Abrir no Google Maps",
     mapTitle: "Localização do Restaurante Chuan Yue no Google Maps",
@@ -36,9 +34,7 @@ const copy = {
     reservations: "Reservations",
     location: "Address",
     hours: "Opening hours",
-    regularDays: "Every day (except Wednesday)",
-    closedDay: "Wednesday",
-    closed: "Closed",
+    regularDays: "Every day",
     contact: "Phone",
     map: "Open in Google Maps",
     mapTitle: "Chuan Yue Restaurant location on Google Maps",
@@ -77,7 +73,6 @@ export function Contact() {
               <span>{t.hours}</span>
               <div className="hours-summary">
                 <div><strong>{t.regularDays}</strong><p>11:45 — 15:00<br />18:45 — 23:00</p></div>
-                <div><strong>{t.closedDay}</strong><p className="is-closed">{t.closed}</p></div>
               </div>
             </div>
           </div>

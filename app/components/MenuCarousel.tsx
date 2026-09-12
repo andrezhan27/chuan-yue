@@ -14,11 +14,10 @@ const dishes = [
   { pt: "Mapo Tofu", en: "Mapo Tofu", notePt: "tofu · porco · doubanjiang", noteEn: "tofu · pork · doubanjiang", image: "/menu/mapo-tofu.webp" },
   { pt: "Frango Gong Bao", en: "Gong Bao Chicken", notePt: "frango · amendoim · malagueta seca", noteEn: "chicken · peanuts · dried chilli", image: "/menu/gong-bao-chicken.webp" },
   { pt: "Peixe-esquilo agridoce", en: "Sweet & Sour Squirrel Fish", notePt: "pinhões · ervilhas · molho agridoce", noteEn: "pine nuts · peas · sweet-and-sour sauce", image: "/menu/sweet-and-sour-squirrel-fish.webp" },
-  { pt: "Espetadas de Sichuan em óleo picante", en: "Sichuan Chilli-Oil Skewers", notePt: "raiz de lótus · sésamo · óleo de chilli", noteEn: "lotus root · sesame · chilli oil", image: "/menu/sichuan-chilli-oil-skewers.webp" },
-  { pt: "Asas de frango Dry Pot", en: "Dry Pot Chicken Wings", notePt: "malagueta seca · pimento · sésamo", noteEn: "dried chilli · peppers · sesame", image: "/menu/dry-pot-chicken-wings.webp" },
+  { pt: "Espetadas de Sichuan em óleo picante", en: "Sichuan Chilli-Oil Skewers", notePt: "Raiz de lótus · batatas · pimentos", noteEn: "Lotus root · potatoes · peppers", image: "/menu/sichuan-chilli-oil-skewers.webp" },
+  { pt: "Caçarola de Gambas", en: "Prawn Casserole", notePt: "gambas · legumes · molho da casa", noteEn: "prawns · vegetables · house sauce", image: "/menu/dry-pot-chicken-wings.webp" },
   { pt: "Camarão Typhoon Shelter", en: "Typhoon Shelter Prawns", notePt: "alho crocante · malagueta seca · cebolinho", noteEn: "crispy garlic · dried chilli · spring onion", image: "/menu/typhoon-shelter-prawns.webp" },
-  { pt: "Omelete crocante de vieiras", en: "Crispy Scallop Omelette", notePt: "vieiras · ovo · cebolinho", noteEn: "scallops · egg · spring onion", image: "/menu/scallop-omelette.webp" },
-  { pt: "Peixe ao vapor com camarão", en: "Steamed Fish with Shrimp", notePt: "camarão · pimentos · molho de soja", noteEn: "shrimp · peppers · soy sauce", image: "/menu/steamed-fish-with-shrimp.webp" },
+  { pt: "Gyoza Frita de Porco", en: "Fried Pork Gyoza", notePt: "porco · legumes · cebolinho", noteEn: "pork · vegetables · spring onion", image: "/menu/scallop-omelette.webp" },
   { pt: "Frango picante de Chongqing", en: "Chongqing Chilli Chicken", notePt: "malagueta seca · pimenta de Sichuan · cebolinho", noteEn: "dried chilli · Sichuan pepper · spring onion", image: "/menu/chongqing-chilli-chicken.webp" },
 ];
 
@@ -115,7 +114,7 @@ export function MenuCarousel() {
                 aria-hidden={distance > 1}
               >
                 <div className="dish-image image-frame"><Image src={dish.image} alt={dish[language]} width={1456} height={1092} sizes="(max-width: 860px) 77vw, 420px" /></div>
-                <div className="dish-meta"><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{dish[language]}</h3><p>{language === "pt" ? dish.notePt : dish.noteEn}</p></div></div>
+                <div className="dish-meta"><div><h3>{dish[language]}</h3><p>{language === "pt" ? dish.notePt : dish.noteEn}</p></div></div>
               </motion.article>
             );
           })}
