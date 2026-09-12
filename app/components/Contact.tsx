@@ -1,7 +1,7 @@
 "use client";
 
 import { CalendarDays, Clock3, MapPin, MoveUpRight, Phone, ShoppingBag } from "lucide-react";
-import { restaurantInfo, restaurantMapUrl, restaurantPhoneHref } from "../data/restaurant";
+import { restaurantInfo, restaurantMapUrl, restaurantPhoneHrefs } from "../data/restaurant";
 import { useLanguage } from "./LanguageProvider";
 import { Reveal } from "./Reveal";
 
@@ -80,7 +80,11 @@ export function Contact() {
             <Phone />
             <div>
               <span>{t.contact}</span>
-              <p><a href={restaurantPhoneHref}>{restaurantInfo.phone}</a></p>
+              <p>
+                {restaurantInfo.phones.map((phone, index) => (
+                  <a href={restaurantPhoneHrefs[index]} key={phone}>{phone}</a>
+                ))}
+              </p>
             </div>
           </div>
           <div className="contact-row contact-reservation-row">

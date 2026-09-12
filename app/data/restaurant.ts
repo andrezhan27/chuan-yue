@@ -10,7 +10,7 @@ export const restaurantInfo = {
     city: "Lisboa",
     country: "Portugal",
   },
-  phone: "+351 21 135 5164",
+  phones: ["+351 969 680 539", "+351 21 135 5164"],
   openingHours: [
     { day: { pt: "Segunda-feira", en: "Monday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },
     { day: { pt: "Terça-feira", en: "Tuesday" }, periods: ["11:45 — 15:00", "18:45 — 23:00"] },
@@ -23,7 +23,9 @@ export const restaurantInfo = {
 } as const;
 
 export const restaurantName = `${restaurantInfo.name.chinese} ${restaurantInfo.name.latin}`;
-export const restaurantPhoneHref = `tel:${restaurantInfo.phone.replace(/[^+\d]/g, "")}`;
+export const restaurantPhoneHrefs = restaurantInfo.phones.map(
+  (phone) => `tel:${phone.replace(/[^+\d]/g, "")}`,
+);
 export const restaurantMapUrl = `https://www.openstreetmap.org/search?query=${encodeURIComponent(
   `${restaurantInfo.address.street}, ${restaurantInfo.address.postalCode} ${restaurantInfo.address.city}, ${restaurantInfo.address.country}`,
 )}`;

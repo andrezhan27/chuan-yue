@@ -214,6 +214,7 @@ button { font: inherit; }
 .contact-row > svg { width: 23px; height: 23px; color: var(--gold); }
 .contact-row span { display: block; margin-bottom: 13px; font-size: 10px; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
 .contact-row p { margin: 0; white-space: pre-line; color: var(--muted); font-size: 17px; line-height: 1.7; }
+.contact-row p > a { display: block; }
 .hours-summary { display: grid; gap: 18px; }
 .hours-summary > div { display: grid; grid-template-columns: minmax(170px, 1.25fr) minmax(130px, .75fr); gap: 22px; align-items: start; }
 .hours-summary strong { color: var(--muted); font-size: 15px; font-weight: 500; line-height: 1.65; }
