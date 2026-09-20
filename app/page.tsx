@@ -6,8 +6,11 @@ import { LanguageProvider } from "./components/LanguageProvider";
 import { MenuCarousel } from "./components/MenuCarousel";
 import { Navbar } from "./components/Navbar";
 import { SpaceCarousel } from "./components/SpaceCarousel";
+import { getLegalDocumentUrls } from "./data/legal";
 
-export default function Home() {
+export default async function Home() {
+  const legalDocumentUrls = await getLegalDocumentUrls();
+
   return (
     <LanguageProvider>
       <Navbar />
@@ -20,7 +23,7 @@ export default function Home() {
             <Contact />
             <Highlights />
           </main>
-          <Footer />
+          <Footer {...legalDocumentUrls} />
         </div>
       </div>
     </LanguageProvider>
