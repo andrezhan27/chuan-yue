@@ -31,7 +31,10 @@
 .awardBadge {
   position: relative;
   z-index: 1;
-  transform: scale(1.8);
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(252, 250, 244, .95);
+  transform: scale(1.4);
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .35));
 }
 
@@ -42,6 +45,6 @@
   }
 
   .awardBadge {
-    transform: scale(1.35);
+    transform: scale(.9);
   }
 }
