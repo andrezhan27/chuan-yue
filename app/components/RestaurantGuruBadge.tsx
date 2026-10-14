@@ -2,14 +2,24 @@ export function RestaurantGuruBadge() {
   return (
     <>
       <link rel="stylesheet" href="https://awards.infcdn.net/2026/circle_v2.css" precedence="default" />
-      <div id="circle-r-ribbon" className="restaurant-guru-badge rg-award-lang-pt_PT">
-        <div className="r-ribbon_ahead restaurant-guru-heading">
+      <div id="circle-r-ribbon" className="restaurant-guru-badge arc-top_nostars rg-award-lang-pt_PT">
+        <div className="r-ribbon_ahead r-ribbon_2str restaurant-guru-heading">
           <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" aria-hidden="true">
             <defs>
               <path id="chuan-yue-award-heading-arc" d="M 30 80 a 50 50 0 1 1 100 0" />
             </defs>
             <text className="r-ribbon_ahead-heading" fill="#000" textAnchor="middle">
-              <textPath startOffset="50%" href="#chuan-yue-award-heading-arc">Melhor ovo Centenário</textPath>
+              <textPath startOffset="50%" href="#chuan-yue-award-heading-arc">A top 10 best restaurante chinês in</textPath>
+            </text>
+          </svg>
+        </div>
+        <div className="r-ribbon_ahead r-ribbon_2str2 restaurant-guru-heading restaurant-guru-heading-city">
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" aria-hidden="true">
+            <defs>
+              <path id="chuan-yue-award-heading-city-arc" d="M 30 80 a 50 50 0 1 1 100 0" />
+            </defs>
+            <text className="r-ribbon_ahead-heading" fill="#000" textAnchor="middle">
+              <textPath startOffset="50%" href="#chuan-yue-award-heading-city-arc">Lisboa</textPath>
             </text>
           </svg>
         </div>
@@ -19,7 +29,7 @@ export function RestaurantGuruBadge() {
           className="restaurant-guru-restaurant-link"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chuan Yue — Melhor ovo Centenário 2026, Restaurant Guru"
+          aria-label="Chuan Yue — Top 10 restaurantes chineses em Lisboa 2026, Restaurant Guru"
         >
           <span className="r-ribbon_title">Chuan Yue</span>
         </a>

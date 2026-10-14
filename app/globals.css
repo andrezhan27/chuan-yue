@@ -194,8 +194,9 @@ button { font: inherit; }
 .highlights-copy { max-width: 650px; }
 .highlights-copy p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
 .highlights-copy p + p { margin-top: 17px; color: var(--ink); font-family: "EB Garamond", serif; font-size: 21px; line-height: 1.55; }
-.restaurant-guru-badge { position: relative; display: flex; flex-direction: column; align-items: center; overflow: hidden; padding: 0; width: 174px; min-width: 174px; height: 135px; font: 400 10px/normal "Akrobat Bold", "Helvetica Neue", Arial, sans-serif; text-align: center; color: #000; text-shadow: none; background: url("https://awards.infcdn.net/img/bg.svg") no-repeat; }
-.restaurant-guru-badge .restaurant-guru-heading { transform: rotate(-11deg); position: absolute; z-index: 4; top: -7px; left: 6px; letter-spacing: .2px; padding: 0; pointer-events: none; }
+.restaurant-guru-badge { position: relative; display: flex; flex-direction: column; align-items: center; overflow: hidden; padding: 0; width: 174px; min-width: 174px; height: 135px; font: 400 10px/normal "Akrobat Bold", "Helvetica Neue", Arial, sans-serif; text-align: center; color: #000; text-shadow: none; background: url("https://awards.infcdn.net/img/bg_no_stars.svg") no-repeat; }
+.restaurant-guru-badge .restaurant-guru-heading { transform: rotate(-13deg); position: absolute; z-index: 4; top: -16px; left: 3px; letter-spacing: .2px; padding: 0; pointer-events: none; }
+.restaurant-guru-badge .restaurant-guru-heading-city { top: -2px; left: 7px; }
 .restaurant-guru-badge svg { display: block; max-width: none; margin-top: 0; }
 .restaurant-guru-badge .r-ribbon_ahead-heading { font: 9px/1 "Akrobat Bold", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; }
 .restaurant-guru-badge .r-ribbon_year { color: #000; width: 140px; font: italic 22px/normal "Akrobat Black", "Helvetica Neue", Arial, sans-serif; transform: rotate(-12deg); position: absolute; top: 41px; left: 12px; letter-spacing: .6px; padding: 0; margin: 0; }

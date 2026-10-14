@@ -71,7 +71,7 @@ export function Highlights() {
                 <RestaurantGuruBadge />
               </div>
             </div>
-            <figcaption>Restaurant Guru · 2026 · {language === "pt" ? "Melhor ovo Centenário" : "Best century egg"}</figcaption>
+            <figcaption>Restaurant Guru · 2026 · {language === "pt" ? "Top 10 restaurantes chineses em Lisboa" : "Top 10 Chinese restaurants in Lisbon"}</figcaption>
           </figure>
         </Reveal>
         {highlights.map((highlight, index) => (
