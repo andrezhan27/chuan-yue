@@ -194,11 +194,21 @@ button { font: inherit; }
 .highlights-copy { max-width: 650px; }
 .highlights-copy p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
 .highlights-copy p + p { margin-top: 17px; color: var(--ink); font-family: "EB Garamond", serif; font-size: 21px; line-height: 1.55; }
-.highlights-gallery { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.restaurant-guru-badge { position: relative; display: flex; flex-direction: column; align-items: center; overflow: hidden; padding: 0; width: 174px; min-width: 174px; height: 135px; font: 400 10px/normal "Akrobat Bold", "Helvetica Neue", Arial, sans-serif; text-align: center; color: #000; text-shadow: none; background: url("https://awards.infcdn.net/img/bg.svg") no-repeat; }
+.restaurant-guru-badge .restaurant-guru-heading { transform: rotate(-11deg); position: absolute; z-index: 4; top: -7px; left: 6px; letter-spacing: .2px; padding: 0; pointer-events: none; }
+.restaurant-guru-badge svg { display: block; max-width: none; margin-top: 0; }
+.restaurant-guru-badge .r-ribbon_ahead-heading { font: 9px/1 "Akrobat Bold", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; }
+.restaurant-guru-badge .r-ribbon_year { color: #000; width: 140px; font: italic 22px/normal "Akrobat Black", "Helvetica Neue", Arial, sans-serif; transform: rotate(-12deg); position: absolute; top: 41px; left: 12px; letter-spacing: .6px; padding: 0; margin: 0; }
+.restaurant-guru-restaurant-link { position: absolute; inset: 0; z-index: 5; }
+.restaurant-guru-restaurant-link:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.restaurant-guru-badge .r-ribbon_title { text-transform: uppercase; color: #fff; width: 140px; font: italic 16px/normal "Akrobat Bold", "Helvetica Neue", Arial, sans-serif; transform: rotate(-12deg); position: absolute; top: 72px; left: 12px; letter-spacing: .4px; white-space: normal; padding: 0; margin: 0; }
+.restaurant-guru-badge .restaurant-guru-footer { bottom: -14px; left: 26px; letter-spacing: .3px; transform: rotate(-13deg); height: 100%; max-width: 100%; padding: 0; position: absolute; z-index: 6; pointer-events: none; }
+.restaurant-guru-badge .r-ribbon_ahead-subh, .restaurant-guru-badge .r-ribbon_ahead-subh a { font: 12px/1 "Akrobat Regular", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: .3px; text-decoration: none; border-bottom: none; box-shadow: none; padding: 0; margin: 0; }
+.restaurant-guru-badge .r-ribbon_ahead-subh a { pointer-events: auto; }
 .highlight-card figure { height: 100%; margin: 0; display: flex; flex-direction: column; background: var(--paper); }
 .highlight-image { position: relative; aspect-ratio: 4/3; background: #272521; }
 .highlight-image img { object-fit: cover; }
-.highlight-card:nth-child(3) .highlight-image img { object-position: center; }
+.highlight-card:last-child .highlight-image img { object-position: center; }
 .highlight-card figcaption { flex: 1; padding: 18px 20px 20px; color: var(--muted); font-size: 12px; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; }
 
 /* Contact */
@@ -293,7 +303,6 @@ button { font: inherit; }
   .highlights-heading { display: block; }
   .highlights-copy { margin-top: 28px; }
   .highlights-copy p { font-size: 16px; }
-  .highlights-gallery { grid-template-columns: 1fr; gap: 14px; }
   .contact-heading p { font-size: 17px; }
   .contact-layout { grid-template-columns: 1fr; gap: 42px; }
   .contact-row { min-height: 165px; padding: 29px 4px; grid-template-columns: 36px 1fr; gap: 18px; }

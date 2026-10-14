@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { Reveal } from "./Reveal";
+import { RestaurantGuruBadge } from "./RestaurantGuruBadge";
+import styles from "./Highlights.module.css";
 
 const highlights = [
   {
@@ -54,12 +56,29 @@ export function Highlights() {
         </Reveal>
       </div>
 
-      <div className="highlights-gallery">
+      <div className={styles.gallery}>
+        <Reveal className="highlight-card">
+          <figure>
+            <div className={`highlight-image ${styles.awardImage}`}>
+              <Image
+                src="/hero/hero-desktop-v2.webp"
+                alt=""
+                fill
+                sizes="(max-width: 860px) 100vw, 50vw"
+                className={styles.awardBackground}
+              />
+              <div className={styles.awardBadge}>
+                <RestaurantGuruBadge />
+              </div>
+            </div>
+            <figcaption>Restaurant Guru · 2026 · {language === "pt" ? "Melhor ovo Centenário" : "Best century egg"}</figcaption>
+          </figure>
+        </Reveal>
         {highlights.map((highlight, index) => (
-          <Reveal className="highlight-card" delay={index * .06} key={highlight.image}>
+          <Reveal className="highlight-card" delay={(index + 1) * .06} key={highlight.image}>
             <figure>
               <div className="highlight-image image-frame">
-                <Image src={highlight.image} alt={highlight[language]} fill sizes="(max-width: 860px) 100vw, 33vw" />
+                <Image src={highlight.image} alt={highlight[language]} fill sizes="(max-width: 860px) 100vw, 50vw" />
               </div>
               <figcaption>{highlight[language]}</figcaption>
             </figure>

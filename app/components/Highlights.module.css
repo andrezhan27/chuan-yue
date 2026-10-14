@@ -1,0 +1,47 @@
+.gallery {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery .awardImage {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--charcoal);
+}
+
+.awardBackground {
+  object-fit: cover;
+  filter: blur(5px);
+  transform: scale(1.06);
+}
+
+.awardImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .58);
+  pointer-events: none;
+}
+
+.awardBadge {
+  position: relative;
+  z-index: 1;
+  transform: scale(1.8);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .35));
+}
+
+@media (max-width: 860px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .awardBadge {
+    transform: scale(1.35);
+  }
+}
